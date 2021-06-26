@@ -17,3 +17,7 @@ pokemonList[3] = {
   name: 'Charmander',
   height: 6,
   types: ['fire']};
+
+for (var i = 0; i < pokemonList.length; i++) {
+  document.write(pokemonList[i].name + ": " + pokemonList[i].height);
+}
