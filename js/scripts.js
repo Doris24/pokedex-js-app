@@ -19,10 +19,12 @@ pokemonList[3] = {
   types: ['fire']};
 
 for (var i = 0; i < pokemonList.length; i++) {
+  let pokemonName = pokemonList[i].name;
+  let pokemonHeight = pokemonList[i].height;
   // lists name and height of every Pokemon in Array
-  document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ")" );
+  document.write(pokemonName + " (height: " + pokemonHeight + ")" );
   // checks if height is above 15
-  if (pokemonList[i].height > 15) {
+  if (pokemonHeight > 15) {
       document.write(" Wow, that's big!");
   }
   // line break after each Pokemon
