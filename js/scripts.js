@@ -20,7 +20,7 @@ pokemonList[3] = {
 
 for (var i = 0; i < pokemonList.length; i++) {
   // lists name and height of every Pokemon in Array
-  document.write(pokemonList[i].name + ": " + pokemonList[i].height);
+  document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ")" );
   // checks if height is above 15
   if (pokemonList[i].height > 15) {
       document.write(" Wow, that's big!");
