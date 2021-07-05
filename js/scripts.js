@@ -1,32 +1,34 @@
 // List of Pokemons
-let pokemonList = [];
+let pokemonList = [
+  {
+    name: 'Bulbasaur',
+    height: 7,
+    types: ['grass', 'poison']
+  },
+  {
+    name: 'Ivysaur',
+    height: 10,
+    types: ['grass', 'poison']
+  },
+  {
+    name: 'Venusaur',
+    height: 20,
+    types: ['grass', 'poison']
+  },
+  {
+    name: 'Charmander',
+    height: 6,
+    types: ['fire']
+  }
+];
 
-pokemonList[0] = {
-  name: 'Bulbasaur',
-  height: 7,
-  types: ['grass', 'poison']};
-pokemonList[1] = {
-  name: 'Ivysaur',
-  height: 10,
-  types: ['grass', 'poison']};
-pokemonList[2] = {
-  name: 'Venusaur',
-  height: 20,
-  types: ['grass', 'poison']};
-pokemonList[3] = {
-  name: 'Charmander',
-  height: 6,
-  types: ['fire']};
-
-for (var i = 0; i < pokemonList.length; i++) {
-  let pokemonName = pokemonList[i].name;
-  let pokemonHeight = pokemonList[i].height;
+pokemonList.forEach(function(pokemon) {
   // lists name and height of every Pokemon in Array
-  document.write(pokemonName + " (height: " + pokemonHeight + ")" );
+  document.write(pokemon.name + "(height: " + pokemon.height + ")" )
   // checks if height is above 15
-  if (pokemonHeight > 15) {
-      document.write(" Wow, that's big!");
+  if (pokemon.height > 15) {
+    document.write(" Wow, that's big");
   }
   // line break after each Pokemon
   document.write("<br>");
-}
+});
