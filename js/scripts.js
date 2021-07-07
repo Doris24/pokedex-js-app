@@ -1,28 +1,43 @@
-// List of Pokemons
-let pokemonList = [
-  {
-    name: 'Bulbasaur',
-    height: 7,
-    types: ['grass', 'poison']
-  },
-  {
-    name: 'Ivysaur',
-    height: 10,
-    types: ['grass', 'poison']
-  },
-  {
-    name: 'Venusaur',
-    height: 20,
-    types: ['grass', 'poison']
-  },
-  {
-    name: 'Charmander',
-    height: 6,
-    types: ['fire']
-  }
-];
+let pokemonRepository = (function () {
+  // List of Pokemons
+  let pokemonList = [
+    {
+      name: 'Bulbasaur',
+      height: 7,
+      types: ['grass', 'poison']
+    },
+    {
+      name: 'Ivysaur',
+      height: 10,
+      types: ['grass', 'poison']
+    },
+    {
+      name: 'Venusaur',
+      height: 20,
+      types: ['grass', 'poison']
+    },
+    {
+      name: 'Charmander',
+      height: 6,
+      types: ['fire']
+    }
+  ];
 
-pokemonList.forEach(function(pokemon) {
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+
+  function getAll() {
+    return pokemonList;
+  }
+
+  return {
+    add: add,
+    getAll: getAll
+  }
+})();
+
+pokemonRepository.getAll().forEach(function(pokemon) {
   // lists name and height of every Pokemon in Array
   document.write(pokemon.name + "(height: " + pokemon.height + ")" )
   // checks if height is above 15
