@@ -37,6 +37,19 @@ let pokemonRepository = (function () {
   }
 })();
 
+// create new Pokemon
+function createNewPokemon() {
+  let newPokemon = {
+    name: 'newPokemon1',
+    height: 10,
+    types: ['water']
+  };
+  return newPokemon;
+}
+
+// add newPokemon to pokemonRepository
+pokemonRepository.add(createNewPokemon());
+
 pokemonRepository.getAll().forEach(function(pokemon) {
   // lists name and height of every Pokemon in Array
   document.write(pokemon.name + "(height: " + pokemon.height + ")" )
