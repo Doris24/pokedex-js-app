@@ -23,8 +23,24 @@ let pokemonRepository = (function () {
     }
   ];
 
+  // checks datatypes
+  function addv(pokemon) {
+    if (typeof pokemon.name === typeof ''
+          && typeof pokemon.height === typeof 0
+          && typeof pokemon.types === typeof []
+          && typeof pokemon === typeof [])  {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    if (addv(pokemon) === true) {
+      pokemonList.push(pokemon);
+    } else {
+      console.log("Check Datatypes");
+    }
   }
 
   function getAll() {
