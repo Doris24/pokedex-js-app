@@ -24,7 +24,7 @@ let pokemonRepository = (function () {
   ];
 
   // checks datatypes
-  function addv(pokemon) {
+  function checkType(pokemon) {
     if (typeof pokemon.name === typeof ''
           && typeof pokemon.height === typeof 0
           && typeof pokemon.types === typeof []
