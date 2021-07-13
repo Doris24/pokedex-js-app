@@ -66,10 +66,12 @@ function createNewPokemon() {
 // add newPokemon to pokemonRepository
 pokemonRepository.add(createNewPokemon());
 
+// function to find Pokemons by name
 let lookup = "Charmander";
 let pokemonFilter = pokemonRepository.getAll().filter((pokemon) => {
   return pokemon.name.toLowerCase() === lookup.toLowerCase();
-})
+});
+
 console.log("filter: ", pokemonFilter);
 
 pokemonRepository.getAll().forEach(function(pokemon) {
