@@ -36,7 +36,7 @@ let pokemonRepository = (function () {
   }
 
   function add(pokemon) {
-    if (addv(pokemon) === true) {
+    if (checkType(pokemon) === true) {
       pokemonList.push(pokemon);
     } else {
       console.log("Check Datatypes");
@@ -65,6 +65,12 @@ function createNewPokemon() {
 
 // add newPokemon to pokemonRepository
 pokemonRepository.add(createNewPokemon());
+
+let lookup = "Charmander";
+let pokemonFilter = pokemonRepository.getAll().filter((pokemon) => {
+  return pokemon.name.toLowerCase() === lookup.toLowerCase();
+})
+console.log("filter: ", pokemonFilter);
 
 pokemonRepository.getAll().forEach(function(pokemon) {
   // lists name and height of every Pokemon in Array
