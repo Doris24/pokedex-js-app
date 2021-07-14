@@ -12,7 +12,6 @@
 body {
   text-align: center;
   font-family: 'Oxygen', sans-serif;
-
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -48,5 +47,4 @@ h1 {
   color: var(--text-color);
   border: 2px solid var(--primary-color);
   cursor: pointer;
-
 }
