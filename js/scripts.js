@@ -51,6 +51,18 @@ let pokemonRepository = (function () {
     button.innerText = pokemon.name;
     button.classList.add('pokemon-button');
     listItem.appendChild(button);
+
+    clickEvent(button, pokemon);
+  }
+
+  function clickEvent(element, pokemon) {
+    element.addEventListener('click', function(event) {
+      showDetails(pokemon);
+    });
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon);
   }
 
   function getAll() {
@@ -83,7 +95,7 @@ let pokemonFilter = pokemonRepository.getAll().filter((pokemon) => {
   return pokemon.name.toLowerCase() === lookup.toLowerCase();
 });
 
-console.log("filter: ", pokemonFilter);
+//console.log("filter: ", pokemonFilter);
 
 // function to list all pokemons
 pokemonRepository.getAll().forEach(function(pokemon) {
