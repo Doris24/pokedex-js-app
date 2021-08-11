@@ -43,21 +43,37 @@ let pokemonRepository = (function () {
           detailsUrl: item.url
         };
         add(pokemon);
-        console.log(pokemon);
+        //console.log(pokemon); // lists all pokemon in console
       });
     }).catch(function (e) {
       console.error(e);
     })
   }
 
-  function clickEvent(element, pokemon) {
-    element.addEventListener('click', function(event) {
-      showDetails(pokemon);
+  function loadDetails(item) {
+    let url = item.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
+      //Add details to the item
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
+    }).catch(function(e) {
+      console.error(e);
     });
   }
 
   function showDetails(pokemon) {
-    console.log(pokemon);
+    pokemonRepository.loadDetails(pokemon).then(function () {
+      console.log(pokemon);
+    });
+  }
+
+  function clickEvent(element, pokemon) {
+    element.addEventListener('click', function(event) {
+      showDetails(pokemon);
+    });
   }
 
   function getAll() {
@@ -68,7 +84,9 @@ let pokemonRepository = (function () {
     add: add,
     addListItem: addListItem,
     getAll: getAll,
-    loadList: loadList
+    loadList: loadList,
+    loadDetails: loadDetails,
+    showDetails: showDetails
   }
 })();
 
