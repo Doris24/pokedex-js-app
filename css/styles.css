@@ -96,7 +96,13 @@ h1 {
 }
 
 .modal p {
-  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.modal img {
+  display: block;
+  margin: auto;
+  height: 150px;
 }
 
 #modal-container {

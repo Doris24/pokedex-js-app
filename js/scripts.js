@@ -67,7 +67,7 @@ let pokemonRepository = (function () {
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
       console.log(pokemon);
-      showModal(pokemon.name, "Height: " + pokemon.height);
+      showModal(pokemon.name, "Height: " + pokemon.height, pokemon.imageUrl);
     });
   }
 
@@ -77,7 +77,7 @@ let pokemonRepository = (function () {
     });
   }
 
-  function showModal(title, text) {
+  function showModal(title, text, image) {
     // clear already existing text
     modalContainer.innerText = '';
     // add html elements
@@ -95,9 +95,13 @@ let pokemonRepository = (function () {
     let contentElement = document.createElement('p');
     contentElement.innerText = text;
 
+    let imgElement = document.createElement('img');
+    imgElement.src = image;
+
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
+    modal.appendChild(imgElement);
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add('is-visible');
@@ -135,19 +139,6 @@ let pokemonRepository = (function () {
     showDetails: showDetails
   }
 })();
-
-// // function to create new Pokemon
-// function createNewPokemon() {
-//   let newPokemon = {
-//     name: 'newPokemon1',
-//     height: 10,
-//     types: ['water']
-//   };
-//   return newPokemon;
-// }
-
-// // add newPokemon to pokemonRepository
-// pokemonRepository.add(createNewPokemon());
 
 // function to find Pokemons by name
 let lookup = "Charmander";
