@@ -2,6 +2,7 @@ let pokemonRepository = (function () {
   // List of Pokemons
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let modalContainer = document.querySelector('#modal-container');
 
   // checks datatypes
   function checkType(pokemon) {
@@ -43,7 +44,6 @@ let pokemonRepository = (function () {
           detailsUrl: item.url
         };
         add(pokemon);
-        //console.log(pokemon); // lists all pokemon in console
       });
     }).catch(function (e) {
       console.error(e);
@@ -67,6 +67,7 @@ let pokemonRepository = (function () {
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
       console.log(pokemon);
+      showModal(pokemon.name, "Height: " + pokemon.height);
     });
   }
 
@@ -75,6 +76,51 @@ let pokemonRepository = (function () {
       showDetails(pokemon);
     });
   }
+
+  function showModal(title, text) {
+    // clear already existing text
+    modalContainer.innerText = '';
+    // add html elements
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    let closeButtonElement = document.createElement('button');
+    closeButtonElement.classList.add('modal-close');
+    closeButtonElement.innerText = 'Close';
+    closeButtonElement.addEventListener('click', hideModal);
+
+    let titleElement = document.createElement('h1');
+    titleElement.innerText = title;
+
+    let contentElement = document.createElement('p');
+    contentElement.innerText = text;
+
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(contentElement);
+    modalContainer.appendChild(modal);
+
+    modalContainer.classList.add('is-visible');
+  }
+
+  function hideModal() {
+    modalContainer.classList.remove('is-visible');
+  }
+
+  // close Modal with Esc
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+      hideModal();
+    }
+  });
+
+  // close Modal with mouse click on the modalContainer
+  modalContainer.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target === modalContainer) {
+      hideModal();
+    }
+  });
 
   function getAll() {
     return pokemonList;
