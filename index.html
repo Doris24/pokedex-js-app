@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
+
+    <nav class="navbar navbar-light bg-secondary fixed-top">
+      <a class="navbar-brand" href="#">Pokédex</a>
+    </nav>
+
     <main class="container">
-      <h1>Pokedex</h1>
-      <!-- <button id='show-modal'>Show modal</button> -->
+
+      <h1>Pokédex</h1>
+      <!-- List of pokemon -->
       <ul class="pokemon-list list-group list-inline">
       </ul>
-
-      <!-- Button trigger modal -->
-      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-      </button> -->
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -36,20 +37,14 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
           </div>
         </div>
       </div>
 
-      <!-- <div id='modal-container'> -->
-        <!-- <div class='modal'>
-          <button class='modal-close'>Close</button>
-          <h1>Hallo</h1>
-          <p>Modal text</p>
-        </div> -->
-      <!-- </div> -->
     </main>
+
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

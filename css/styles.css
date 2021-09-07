@@ -1,118 +1,12 @@
-:root {
-  --text-color: #655C56;
-  --primary-color: #94D3AC;
-  --secondary-color: #CCEDD2;
-  --background-color: #EFFCEF;
-}
-
-/*
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  text-align: center;
-  font-family: 'Oxygen', sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
 .container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 0;
+  max-width: 500px;
+  margin-top: 60px;
 }
 
 h1 {
-  margin: 0;
-  padding: 20px 0;
-  color: var(--text-color);
-  font-weight: 700;
+  text-align: center;
 }
-
-.pokemon-list {
-  -webkit-padding-start: 0;
-  padding: 0 5px 5px 5px;
-  margin: 0;
-  list-style-type: none;
-}
-*/
 
 .pokemon-button {
   margin: 5px auto;
-  /* height: 40px;
-  width: 100%;
-  margin: 3px 0px;
-  text-align: center;
-  background-color: var(--primary-color);
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--text-color);
-  border: 2px solid var(--primary-color);
-  cursor: pointer; */
 }
-
-/* #modal-container {
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); */
-
-  /* to show it above other content */
-  /* z-index: 999; */
-
-  /* to allow scrolling if the screen is not high enough*/
-  /* overflow: auto; */
-
-  /* this is used to center the modal */
-  /* display: grid;
-  text-align: center;
-} */
-
-/* .modal {
-  margin: auto;
-  display: inline-block;
-  box-sizing: border-box;
-  background: #fff;
-  padding: 15px;
-  width: 100%;
-  max-width: 375px;
-  text-align: center;
-} */
-
-/* .modal-close {
-  float: right;
-  -webkit-appearance: none;
-  border: 0;
-  background: none;
-  color: #777;
-  text-decoration: underline;
-}
-
-.modal h1 {
-  margin-top: 0;
-}
-
-.modal p {
-  margin-bottom: 0;
-}
-
-.modal img {
-  display: block;
-  margin: auto;
-  height: 150px;
-}
-
-#modal-container {
-  display: none;
-}
-
-#modal-container.is-visible {
-  /* CSS for modal container - add your own desired CSS styles here */
-  /* display: block;
-}  */
