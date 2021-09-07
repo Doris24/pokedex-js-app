@@ -5,6 +5,7 @@
   --background-color: #EFFCEF;
 }
 
+/*
 * {
   box-sizing: border-box;
 }
@@ -36,9 +37,11 @@ h1 {
   margin: 0;
   list-style-type: none;
 }
+*/
 
 .pokemon-button {
-  height: 40px;
+  margin: 5px auto;
+  /* height: 40px;
   width: 100%;
   margin: 3px 0px;
   text-align: center;
@@ -47,7 +50,7 @@ h1 {
   font-weight: 400;
   color: var(--text-color);
   border: 2px solid var(--primary-color);
-  cursor: pointer;
+  cursor: pointer; */
 }
 
 #modal-container {
