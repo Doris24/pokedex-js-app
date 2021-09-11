@@ -5,8 +5,8 @@ let pokemonRepository = (function () {
 
   // checks datatypes
   function checkType(pokemon) {
-    if (typeof pokemon === "object"
-    && "name" in pokemon)  {
+    if (typeof pokemon === 'object'
+    && 'name' in pokemon)  {
       return true;
     } else {
       return false;
@@ -17,7 +17,7 @@ let pokemonRepository = (function () {
     if (checkType(pokemon) === true) {
       pokemonList.push(pokemon);
     } else {
-      console.log("Check Datatypes");
+      console.log('Check Datatypes');
     }
   }
 
@@ -27,16 +27,14 @@ let pokemonRepository = (function () {
     pokeList.appendChild(listItem);
     let button = document.createElement('button');
     button.innerText = pokemon.name;
-    button.classList.add('pokemon-button');
-    button.classList.add('group-list-item');
-    button.classList.add('btn');
-    button.classList.add('btn-info');
-    button.classList.add('btn-block');
-    let attToggle = document.createAttribute("data-toggle");
-    attToggle.value = "modal";
+    button.classList.add('pokemon-button', 'group-list-item');
+    button.classList.add('btn', 'btn-info', 'btn-block');
+
+    let attToggle = document.createAttribute('data-toggle');
+    attToggle.value = 'modal';
     button.setAttributeNode(attToggle);
-    let attTarget = document.createAttribute("data-target");
-    attTarget.value = "#exampleModal";
+    let attTarget = document.createAttribute('data-target');
+    attTarget.value = '#exampleModal';
     button.setAttributeNode(attTarget);
 
     listItem.appendChild(button);
@@ -84,27 +82,27 @@ let pokemonRepository = (function () {
   }
 
   function clickEvent(element, pokemon) {
-    element.addEventListener('click', function(event) {
+    element.addEventListener('click', function() {
       showDetails(pokemon);
     });
   }
 
   function showModal(pokemon) {
-    let modalBody = $(".modal-body");
-    let modalTitle = $(".modal-title");
-    let modalHeader = $(".modal-header");
+    let modalBody = $('.modal-body');
+    let modalTitle = $('.modal-title');
+    // let modalHeader = $('.modal-header');
 
     modalTitle.empty();
     modalBody.empty();
 
     // creating elements in modal content
-    let nameElement = $("<h1>" + pokemon.name + "</h1>");
+    let nameElement = $('<h1>' + pokemon.name + '</h1>');
     let imageElementFront = $('<img class="modal-img" style="width=50%">');
-    imageElementFront.attr("src", pokemon.imageUrlFront);
+    imageElementFront.attr('src', pokemon.imageUrlFront);
     let imageElementBack = $('<img class="modal-img" style="width=50%">');
-    imageElementBack.attr("src", pokemon.imageUrlBack);
-    let heightElement = $("<p>" + "Height: " + pokemon.height + "</p>");
-    let weightElement = $("<p>" + "Weight: " + pokemon.weight + "</p>");
+    imageElementBack.attr('src', pokemon.imageUrlBack);
+    let heightElement = $('<p>' + 'Height: ' + pokemon.height + '</p>');
+    let weightElement = $('<p>' + 'Weight: ' + pokemon.weight + '</p>');
 
     modalTitle.append(nameElement);
     modalBody.append(imageElementFront);
@@ -127,13 +125,14 @@ let pokemonRepository = (function () {
   }
 })();
 
+/*
 // function to find Pokemons by name
-let lookup = "Charmander";
+let lookup = 'Charmander';
 let pokemonFilter = pokemonRepository.getAll().filter((pokemon) => {
   return pokemon.name.toLowerCase() === lookup.toLowerCase();
 });
-
-//console.log("filter: ", pokemonFilter);
+console.log('filter: ', pokemonFilter);
+*/
 
 // function to list all pokemons
 pokemonRepository.loadList().then(function () {
