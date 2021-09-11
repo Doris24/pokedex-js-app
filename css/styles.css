@@ -10,3 +10,7 @@ h1 {
 .pokemon-button {
   margin: 5px auto;
 }
+
+.pokemon-button, .modal-title h1 {
+  text-transform: capitalize;
+}
